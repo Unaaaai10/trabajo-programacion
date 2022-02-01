@@ -17,20 +17,12 @@ public class Alumno {
 		listaNotasDeCadaAlumno = new double[7][3];
 	}
 	
-	
-	
 	public String getNombre() {
 		return this.nombre;
 	}
 
-
-
 	public double[][] getListaNotasDeCadaAlumno() {
 		return this.listaNotasDeCadaAlumno;
-	}
-
-	public void getNotas() {
-		
 	}
 	
 	public void ponerNota() {
