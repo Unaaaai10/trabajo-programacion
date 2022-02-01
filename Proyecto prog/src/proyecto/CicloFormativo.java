@@ -2,29 +2,27 @@ package proyecto;
 
 import java.util.Arrays;
 
-public class CicloFormativo2 {
+public class CicloFormativo {
 
 	private String nombreCicloFormativo;
-	private Grupo2[] arrayGrupos;
+	private Grupo[] arrayGrupos;
 	
-	public CicloFormativo2(String nombreCicloFormativo) {
+	public CicloFormativo(String nombreCicloFormativo, Grupo[] arrayGrupos) {
 		this.nombreCicloFormativo = nombreCicloFormativo;
-		arrayGrupos = new Grupo2[] { new Grupo2("Grupo1")};
-		
+		this.arrayGrupos = arrayGrupos;
 	}
 	
+	public Grupo getGrupo(int numGrupo) {
+		return this.arrayGrupos[numGrupo];
+	}
 	
-	
-	@Override
 	public String toString() {
 		return "Nombre ciclo formativo: " + this.nombreCicloFormativo + ", nombre grupo: "
 				+ Arrays.toString(arrayGrupos);
 	}
 
-
-
 	public static void main(String[] args) {
-		CicloFormativo2 cf1 = new CicloFormativo2("DW");
+		CicloFormativo cf1 = new CicloFormativo("DW", new Grupo[] {new Grupo("Grupo1"), new Grupo("Grupo2")});
 		System.out.println(cf1.toString());
 	}
 }

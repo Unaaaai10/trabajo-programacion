@@ -1,19 +1,44 @@
 package proyecto;
 
+import java.util.Arrays;
+
 public class Grupo {
 
-	private int idGrupo;
-	private Alumnos[] arrayAlumnos;
+	private String nombreGrupo;
+	private Alumno[] alumnosArray;
 	
-	public Grupo(int idGrupo, int tamañoGrupo) {
-		this.idGrupo = idGrupo;
-		this.arrayAlumnos = new Alumnos[tamañoGrupo];
+	public Grupo(String nombreGrupo) {
+		this.nombreGrupo = nombreGrupo;
+		this.alumnosArray = new Alumno[25];
 	}
 	
-	public Alumnos[] cargarAlumnos() {
-		for (int i = 0; i < arrayAlumnos.length; i++) {
-			Alumnos alumnos = arrayAlumnos[i];
+	public String[] getListaAlumnos() {
+		String[] listaNombres = new String[alumnosArray.length];
+		for (int i = 0; i < alumnosArray.length; i++) {
+			listaNombres[i] = alumnosArray[i].getNombre() + " ";
 		}
-		return null;
+		return listaNombres;
+	}
+	
+	//Función repetida para diferentes formas de ejecución
+	public void getListaAlumnos2() {
+		for (int i = 0; i < alumnosArray.length; i++) {
+			System.out.print(alumnosArray[i].getNombre() + " ");
+		}
+		System.out.println();
+	}
+	
+	public void llenarGrupo() {
+		for (int i = 0; i < alumnosArray.length; i++) {
+			alumnosArray[i] = new Alumno("nombre", "apellido", "", "");
+		}
+	}
+	
+	public void cargarAlumno(Alumno alumn, int numAlumnEnGrupo) {
+		this.alumnosArray[numAlumnEnGrupo] = alumn;
+	}
+
+	public String toString() {
+		return this.nombreGrupo + ", alumnos grupo: " + Arrays.toString(this.alumnosArray);
 	}
 }
