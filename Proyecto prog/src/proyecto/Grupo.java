@@ -38,14 +38,14 @@ public class Grupo {
 		this.alumnosArray[numAlumnEnGrupo] = alumn;
 	}
 	
-	public void enseñarNotasModulo(String codModulo) {
+	/*public void enseñarNotasModulo(String codModulo) {
 		for (int i = 0; i < alumnosArray.length; i++) {
 			Nota[] notasArray = new Nota[] {this.alumnosArray[i].getNotas()};
 			for (int j = 0; j < .length; j++) {
 				
 			}
 		}
-	}
+	}*/
 
 	public String toString() {
 		return this.nombreGrupo + ", alumnos grupo: " + Arrays.toString(this.alumnosArray);

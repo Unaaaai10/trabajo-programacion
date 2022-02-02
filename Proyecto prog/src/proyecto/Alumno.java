@@ -24,13 +24,13 @@ public class Alumno {
 		return this.notas;
 	}
 
-	public double[] getNotasModulo(String codModulo) {
+	/*public double[] getNotasModulo(String codModulo) {
 		for (int i = 0; i < notas.length; i++) {
 			if (this.notas[i].getModulo() == codModulo) {
 				return this.notas[i];
 			}
 		}
-	}
+	}*/
 
 	public String getNombre() {
 		return this.nombre;
