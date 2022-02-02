@@ -34,6 +34,7 @@ public class Grupo {
 		}
 	}
 	
+	
 	public void cargarAlumno(Alumno alumn, int numAlumnEnGrupo) {
 		this.alumnosArray[numAlumnEnGrupo] = alumn;
 	}
