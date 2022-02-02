@@ -16,6 +16,14 @@ public class CicloFormativo {
 		return this.arrayGrupos[numGrupo];
 	}
 	
+	public void cargarGrupo(Grupo añadirGrupo) {
+		for (int i = 0; i < arrayGrupos.length; i++) {
+			if (arrayGrupos[i] == null) {
+				arrayGrupos[i] = añadirGrupo;
+			}
+		}
+	}
+	
 	public String toString() {
 		return "Nombre ciclo formativo: " + this.nombreCicloFormativo + ", nombre grupo: "
 				+ Arrays.toString(arrayGrupos);

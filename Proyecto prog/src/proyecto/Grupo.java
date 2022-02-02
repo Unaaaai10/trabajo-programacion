@@ -30,12 +30,21 @@ public class Grupo {
 	
 	public void llenarGrupo() {
 		for (int i = 0; i < alumnosArray.length; i++) {
-			alumnosArray[i] = new Alumno("nombre", "apellido", "", "");
+			alumnosArray[i] = new Alumno("nombre", "apellido", "dni", "localidad");
 		}
 	}
 	
 	public void cargarAlumno(Alumno alumn, int numAlumnEnGrupo) {
 		this.alumnosArray[numAlumnEnGrupo] = alumn;
+	}
+	
+	public void enseñarNotasModulo(String codModulo) {
+		for (int i = 0; i < alumnosArray.length; i++) {
+			Nota[] notasArray = new Nota[] {this.alumnosArray[i].getNotas()};
+			for (int j = 0; j < .length; j++) {
+				
+			}
+		}
 	}
 
 	public String toString() {

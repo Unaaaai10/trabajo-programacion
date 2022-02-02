@@ -7,7 +7,7 @@ public class Alumno {
 	private String dni;
 	private String localidad;
 	private double[][] listaNotasDeCadaAlumno;
-	private Nota[] gdrhNotas;
+	private Nota[] notas;
 	
 	public Alumno(String nombre, String apellido, String dni, String localidad) {
 		this.nombre = nombre;
@@ -15,8 +15,23 @@ public class Alumno {
 		this.dni = dni;
 		this.localidad = localidad;
 		listaNotasDeCadaAlumno = new double[7][3];
+		notas = new Nota[100];
 	}
 	
+	
+	
+	public Nota[] getNotas() {
+		return this.notas;
+	}
+
+	public double[] getNotasModulo(String codModulo) {
+		for (int i = 0; i < notas.length; i++) {
+			if (this.notas[i].getModulo() == codModulo) {
+				return this.notas[i];
+			}
+		}
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -34,6 +49,20 @@ public class Alumno {
 		this.listaNotasDeCadaAlumno[codModulo][eval] = Console.readDouble();
 	}
 	
+	public void introducirNota(Nota nota) {
+		for (int i = 0; i < listaNotasDeCadaAlumno.length; i++) {
+			if(notas[i] == null) {
+				notas[i] = nota;
+			}
+		}
+	}
+	
+	public void showNotas() {
+		for (int i = 0; i < notas.length; i++) {
+			System.out.println("Nota de: " + this.notas[i].getComentario() + " nota: " + this.notas[i].getValorNota());
+		}
+	}
+	
 	public void enseñarNotas() {
 		for (int i = 0; i < listaNotasDeCadaAlumno.length; i++) {
 			System.out.println("modulo " + (i + 1) + " ");
@@ -47,9 +76,9 @@ public class Alumno {
 	
 	public static void main(String[] args) {
 		Alumno n1 = new Alumno("Andoni", "", "", "");
-		/*n1.enseñarNotas();
+		n1.enseñarNotas();
 		n1.ponerNota();
-		n1.enseñarNotas();*/
+		n1.enseñarNotas();
 		Grupo gp3 = new Grupo("Grupo3");
 		gp3.llenarGrupo();
 		gp3.cargarAlumno(n1, 0);
